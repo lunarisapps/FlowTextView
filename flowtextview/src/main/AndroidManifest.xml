@@ -2,4 +2,6 @@
     package="uk.co.deanwild.flowtextview.flowtextview"
     android:versionCode="1"
     android:versionName="1.0" >
+
+
 </manifest>

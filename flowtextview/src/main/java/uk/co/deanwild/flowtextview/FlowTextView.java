@@ -1,6 +1,7 @@
 package uk.co.deanwild.flowtextview;
 
 import android.content.Context;
+import android.content.res.ColorStateList;
 import android.content.res.Configuration;
 import android.content.res.TypedArray;
 import android.graphics.Canvas;
@@ -12,6 +13,7 @@ import android.text.Spanned;
 import android.text.TextPaint;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
+import android.util.Log;
 import android.view.View;
 import android.widget.RelativeLayout;
 
@@ -172,14 +174,14 @@ public class FlowTextView extends RelativeLayout {
                     do {
                         chunkSize = getChunk(thisBlock, maxWidth);
                         int thisCharOffset = charOffsetEnd + chunkSize;
+                        //Log.d("FlowTextView", "thisBlock: " + thisBlock + " chunkSize: " + chunkSize);
 
-                        if (chunkSize > 1) {
-                            if (chunkSize < thisBlock.length()) {
-                                thisLineStr = thisBlock.substring(0, chunkSize);
-                            } else {
-                                thisLineStr = thisBlock;
-                                thisBlock = "";
-                            }
+                        if(chunkSize > thisBlock.length()){
+                            chunkSize = thisBlock.length();
+                        }
+
+                        if (chunkSize >= 1) {
+                            thisLineStr = thisBlock.substring(0, chunkSize);
                         } else {
                             thisLineStr = "";
                         }
@@ -231,7 +233,7 @@ public class FlowTextView extends RelativeLayout {
                         }
                     }
 
-                    if (chunkSize >= 1 && chunkSize < thisBlock.length()) {
+                    if (chunkSize >= 1) {
                         thisBlock = thisBlock.substring(chunkSize, thisBlock.length());
                     }
 
