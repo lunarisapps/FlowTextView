@@ -149,7 +149,7 @@ public class FlowTextView extends RelativeLayout {
 
         mSpanParser.reset();
 
-        boolean lastBlockWasCountedAsEmptyLine = false;
+       //boolean lastBlockWasCountedAsEmptyLine = false;
 
         for (int block_no = 0; block_no <= blocks.length - 1; block_no++) // at the highest level we iterate through each 'block' of text
         {
@@ -159,16 +159,19 @@ public class FlowTextView extends RelativeLayout {
                 charOffsetEnd++;
             }
             if (thisBlock.length() <= 0) { //is a line break
-                if (lastBlockWasCountedAsEmptyLine) {
-                    lastBlockWasCountedAsEmptyLine = false;
-                } else {
-                    lineIndex++; // we need a new line
-                    charOffsetEnd += 2;
-                    charOffsetStart = charOffsetEnd;
-                    lastBlockWasCountedAsEmptyLine = true;
-                }
+                lineIndex++; // we need a new line
+                //charOffsetEnd += 2;
+                charOffsetStart = charOffsetEnd;
+                //if (lastBlockWasCountedAsEmptyLine) {
+                //    lastBlockWasCountedAsEmptyLine = false;
+                //} else {
+                //    lineIndex++; // we need a new line
+                //    charOffsetEnd += 2;
+                //    charOffsetStart = charOffsetEnd;
+                //    lastBlockWasCountedAsEmptyLine = true;
+                //}
             } else { // is some actual text
-                lastBlockWasCountedAsEmptyLine = false;
+                //lastBlockWasCountedAsEmptyLine = false;
 
                 while (thisBlock.length() > 0) { // churn through the block spitting it out onto seperate lines until there is nothing left to render
                     lineIndex++; // we need a new line
