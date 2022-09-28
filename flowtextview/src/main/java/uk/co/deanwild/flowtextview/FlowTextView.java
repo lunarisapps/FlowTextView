@@ -1,7 +1,6 @@
 package uk.co.deanwild.flowtextview;
 
 import android.content.Context;
-import android.content.res.ColorStateList;
 import android.content.res.Configuration;
 import android.content.res.TypedArray;
 import android.graphics.Canvas;
@@ -120,6 +119,9 @@ public class FlowTextView extends RelativeLayout {
         float mViewWidth = this.getWidth();
         obstacles.clear(); // clear old data, boxes stores an array of "obstacles" that we need to paint the text around
         int lowestYCoord = findBoxesAndReturnLowestObstacleYCoord(); // find the "obstacles" within the view and get the lowest obstacle coordinate at the same time
+        if (mText == null) {
+            mText = "";
+        }
         String[] blocks = mText.toString().split("\n"); // split the text into its natural blocks
 
         // set up some counter and helper variables we will us to traverse through the string to be rendered
