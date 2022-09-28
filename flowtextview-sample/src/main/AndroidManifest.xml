@@ -9,7 +9,8 @@
         android:theme="@style/AppTheme" >
         <activity
             android:name="uk.co.deanwild.flowtextview.sample.MainActivity"
-            android:label="FlowTextView Demo" >
+            android:label="FlowTextView Demo"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

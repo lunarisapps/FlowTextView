@@ -3,17 +3,17 @@ package uk.co.deanwild.flowtextview.sample;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
-import android.support.v7.app.ActionBarActivity;
 import android.text.Html;
 import android.text.Spanned;
 import android.view.View;
 import android.widget.Button;
 
+import androidx.appcompat.app.AppCompatActivity;
 import uk.co.deanwild.flowtextview.FlowTextView;
 import uk.co.deanwild.flowtextview.listeners.OnLinkClickListener;
 
 
-public class MainActivity extends ActionBarActivity implements View.OnClickListener {
+public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 	
 	private static final float defaultFontSize = 20.0f;
 	
