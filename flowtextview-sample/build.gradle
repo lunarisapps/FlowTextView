@@ -1,12 +1,12 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 33
-    buildToolsVersion '33.0.0'
+    buildToolsVersion = "35.0.0"
+
     defaultConfig {
         applicationId 'com.dean.flowtextviewsampleapp.sample'
         minSdkVersion 14
-        targetSdkVersion 33
+        targetSdkVersion 35
         versionCode 1
         versionName '1.0'
     }
@@ -19,10 +19,11 @@ android {
     productFlavors {
     }
     namespace 'uk.co.deanwild.flowtextview.sample'
+    compileSdk 35
 }
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation 'androidx.appcompat:appcompat:1.6.1'
+    implementation 'androidx.appcompat:appcompat:1.7.0'
     implementation project(':flowtextview')
 }

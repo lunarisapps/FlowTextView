@@ -2,12 +2,14 @@ apply plugin: 'com.android.library'
 
 
 android {
-    compileSdkVersion 33
-    buildToolsVersion '33.0.0'
+    buildToolsVersion = "35.0.0"
 
     defaultConfig {
-        minSdkVersion 14
-        targetSdkVersion 33
+        minSdkVersion 21
+        targetSdkVersion 35
+
+        versionCode 2100
+        versionName "2.1.0 Development Version"
     }
 
     buildTypes {
@@ -16,7 +18,12 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
         }
     }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
     namespace 'uk.co.deanwild.flowtextview.flowtextview'
+    compileSdk 35
 }
 
 
